@@ -1,0 +1,75 @@
+
+<section class="student-list">
+  <div class="list-header">
+    <div>
+      <h2>Student Directory</h2>
+      <p>View and manage student records.</p>
+    </div>
+
+    <span class="count">
+      {{ filteredStudents.length }} students
+    </span>
+  </div>
+
+  <div class="search-box">
+    <span>⌕</span>
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search by student name..."
+      aria-label="Search students by name"
+    />
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Age</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        @for (student of filteredStudents; track student.id) {
+          <tr>
+            <td>{{ student.id }}</td>
+            <td class="student-name">{{ student.name }}</td>
+            <td>{{ student.email }}</td>
+            <td>{{ student.course }}</td>
+            <td>{{ student.age }}</td>
+            <td>
+              <div class="actions">
+                <button
+                  type="button"
+                  class="edit-button"
+                  (click)="onEdit(student)"
+                >
+                  Edit
+                </button>
+
+                <button
+                  type="button"
+                  class="delete-button"
+                  (click)="onDelete(student.id)"
+                >
+                  Delete
+                </button>
+              </div>
+            </td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="6" class="empty-message">
+              No students found.
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

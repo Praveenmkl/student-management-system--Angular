@@ -1,0 +1,165 @@
+:host {
+  display: block;
+}
+
+.student-list {
+  padding: 20px 22px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.list-header h2 {
+  margin: 0 0 4px;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.list-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.count {
+  padding: 4px 10px;
+  color: #000000;
+  background: #ffdd00;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.search-box:focus-within {
+  border-color: #111827;
+}
+
+.search-box span {
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #111827;
+  font: inherit;
+  font-size: 13px;
+}
+
+.search-box input::placeholder {
+  color: #9ca3af;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+}
+
+th {
+  padding: 10px 12px;
+  color: #4b5563;
+  background: #f9fafb;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+  white-space: nowrap;
+}
+
+tr:hover td {
+  background: #f9fafb;
+}
+
+.student-name {
+  color: #111827;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edit-button {
+  color: #000000;
+  background: #ffdd00;
+}
+
+.edit-button:hover {
+  background: #ebd000;
+}
+
+.delete-button {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.delete-button:hover {
+  background: #fecaca;
+}
+
+.empty-message {
+  padding: 32px 12px;
+  text-align: center;
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+  .student-list {
+    padding: 16px;
+  }
+
+  .list-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

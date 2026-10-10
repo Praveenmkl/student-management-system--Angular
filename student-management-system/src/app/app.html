@@ -1,0 +1,40 @@
+
+<div class="page">
+  <main class="container">
+    <header class="page-header">
+      <h1>Student Management</h1>
+      <p>Manage student records in one place.</p>
+    </header>
+
+    <section class="summary-card">
+      <div>
+        <span>Total registered students</span>
+        <strong>{{ students.length }}</strong>
+      </div>
+
+      <button
+        type="button"
+        class="add-button"
+        (click)="openAddForm()"
+      >
+        + Add Student
+      </button>
+    </section>
+
+    @if (showForm) {
+      <section class="form-section">
+        <app-student-form
+          [student]="editingStudent"
+          (saveStudent)="onSaveStudent($event)"
+          (cancelForm)="closeForm()"
+        />
+      </section>
+    }
+
+    <app-student-list
+      [students]="students"
+      (deleteRequested)="onDeleteStudent($event)"
+      (editRequested)="onEditStudent($event)"
+    />
+  </main>
+</div>
